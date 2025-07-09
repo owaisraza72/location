@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<div id="show"></div>
+
+<body>
+
+    <!-- <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97350.53096806526!2d67.04734407740558!3d24.938516136518505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb34026081297db%3A0x352590590f8fe946!2zS2FyYWNoaSBJanRlbWEgR2FoINqp2LHYp9qG24wg2KfYrNiq2YXYp9i5INqv2KfbgQ!5e0!3m2!1sen!2s!4v1752038800876!5m2!1sen!2s"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+
+    <script>
+        // longitude 67.0898661
+        //         location.html: 25 latitude 24.9257918
+
+        // navigator.geolocation.getCurrentPosition(function (a) {
+
+        //     console.log("longitude", a.coords.longitude)
+        //     console.log("latitude", a.coords.latitude)
+
+        // })
+
+        let show = document.getElementById('show')
+        let online = navigator.onLine
+        console.log(online)
+        if (online === true) {
+
+            alert("Your Welcome")
+            show.innerHTML = `Your Welcome`
+
+        }
+
+        else {
+            alert("Please connect the internate")
+            show.innerHTML = `Please connect the internate`
+        }
+
+
+
+    </script>
+</body>
+
+</html>
