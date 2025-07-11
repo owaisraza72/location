@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Camera & location</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./sweet-ui.css" />
+    <!-- ✅ Add this line -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+
+  <body>
+    <button id="backbtn" onclick="back()">⬅ Back</button>
+<div id="attendanceTable">    <!-- Attendance log table -->
+
+    <!-- Attendance log table -->
+    <h1 >📄 Attendance Log</h1>
+    
+    <table id="logtable">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Email</td>
+          <td>Batch No</td>
+          <td>CNIC No</td>
+          <td>Locaton</td>
+          <td>Time</td>
+          <td>Photo</td>
+        </tr>
+      </thead>
+
+      <tbody id="tablebody"></tbody>
+    </table>
+    </div>
+  </body>
+
+  <script>
+    // ----------- Table mein row dikhane ka function ------------
+
+    function render() {
+      // Table ka reference jahan attendance log dikhayenge
+      let table = document.getElementById("logtable");
+
+      // Table ke body ko access kiya (jahan rows add karni hain)
+      let tbody = document.getElementById("tablebody");
+
+      let data = JSON.parse(localStorage.getItem("attend")) || [];
+
+      console.log(data);
+      // ✅ Table ko pehle clear karo
+      tbody.innerHTML = "";
+
+      for (let i = 0; i < data.length; i++) {
+        tbody.innerHTML += `
+      <tr>
+        <td>${data[i].name}</td>
+        <td>${data[i].email}</td>
+        <td>${data[i].batch}</td>
+        <td>${data[i].cnic}</td>
+        <td>${data[i].location}</td>
+        <td>${data[i].time}</td>
+        <td><img src="${data[i].imageSrc}" width="100"/></td>
+      </tr>`;
+      }
+    }
+    render(); // LocalStorage ka data table mein dikhaye
+
+    function back() {
+      window.location.href = "index.html";
+    }
+  </script>
+</html>

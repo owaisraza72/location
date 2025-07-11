@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Camera & location</title>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link rel="stylesheet" href="./sweet-ui.css" />
+    <!-- ✅ Add this line -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+  <style>
+    /* Reset and box sizing */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      
+    }
+
+    body{
+    background-color: #eff0f5;
+      font-family: Arial, sans-serif;
+    }  
+
+    /* Body styling */
+    #container {
+      background-color: #eff0f5;
+      font-family: Arial, sans-serif;
+      display: flex;
+      gap:20px;
+      justify-content: center;
+      align-items: center;
+      min-height: 90vh;
+    }
+
+    /* Form container styling */
+    #attendform {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      animation: animate__backInUp 1s;
+    }
+
+    /* Heading */
+    #attendform h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 24px;
+    }
+
+    /* Inputs styling */
+#attendform input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+#attendform input:focus {
+      border-color: #2abbe8;
+    }
+
+    /* Button styling */
+#capture {
+      width: 100%;
+      padding: 15px;
+      background-color: #2abbe8;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+#capture:hover {
+      background-color: #229fcf;
+    }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 8px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+      input {
+        padding: 5px;
+        margin-right: 10px;
+      }
+
+      #admin {
+  width: 50%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin:0px  250px 10px;
+  transition: all 0.3s ease;
+}
+
+
+#admin {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+#admin:hover {
+  background-color: #565e64;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+    </style>
+  </head>
+
+  <body>
+  <div id="container">
+    <form id="attendform" class="animate__animated animate__backInUp">
+      <h1>Online Attendance System</h1>
+
+      <input type="text" id="name" placeholder="Enter Your Full Name" />
+
+      <input type="email" id="email" placeholder="Enter Your Email" />
+
+      <input type="number" id="batch" placeholder="Enter Batch No" />
+
+      <input type="number" id="cnic" placeholder="Enter Your NIC No" />
+
+      <!-- Photo capture karne ke liye button -->
+      <button id="capture">Capture & Save Attendence</button>
+    </form>
+
+    <!-- Webcam se live video dikhane ke liye element -->
+    <video id="video" width="400" height="300" autoplay></video>
+    <br /><br />
+
+    <br /><br />
+    <!-- Picture capture karne ke liye canvas -->
+    <canvas id="canvas" width="500" height="400" style="display: none"></canvas>
+
+    <!-- Messages ya errors dikhane ke liye caption -->
+    <caption id="caption"></caption>
+    </div>
+
+    <!-- Capture ki photo ko download karne ke liye link -->
+    <!-- <a id="download">Download</a> -->
+    <button id="admin">Admin Access</button>
+    <!-- Location ya online status show karne ke liye div -->
+    <!-- <div id="show"></div> -->
+
+    <script src="./app.js"></script>
+  </body>
+</html>

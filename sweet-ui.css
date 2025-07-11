@@ -1,0 +1,66 @@
+/* sweet-ui.css */
+
+/* Table Style */
+#logtable {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+#logtable thead {
+  background-color: #26c6da;
+  color: white;
+  font-weight: bold;
+}
+
+#logtable th,
+#logtable td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+#logtable tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+#logtable img {
+  border-radius: 5px;
+  width: 80px;
+  height: auto;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  color: #00796b;
+  margin-top: 40px;
+  font-size: 28px;
+}
+
+/* Back Button */
+#backbtn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #00796b;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#backbtn:hover {
+  background-color: #004d40;
+}
